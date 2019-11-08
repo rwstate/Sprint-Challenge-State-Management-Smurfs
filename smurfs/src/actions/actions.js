@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const GET_SMURFS = 'GET_SMURFS';
 export const ADD_SMURF = 'ADD_SMURFS';
+export const REMOVE_SMURF = 'REMOVE_SMURF';
 
 export const fetchSmurfs = () => dispatch => {
   return (
@@ -21,4 +22,14 @@ export const postSmurf = smurf => dispatch => {
       .catch(err => console.log('Try again! Error: ', err))
   )
 }
+
+export const deleteSmurf = id => dispatch => {
+  return (
+    axios
+      .delete(`http://localhost:3333/smurfs/${id}`)
+      .then(res => dispatch({type:REMOVE_SMURF}))
+      .catch(err => console.log(err))
+  )
+}
+
 

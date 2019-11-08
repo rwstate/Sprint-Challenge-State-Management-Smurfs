@@ -1,5 +1,6 @@
 import { GET_SMURFS } from "../actions/actions";
 import { ADD_SMURF } from "../actions/actions";
+import { REMOVE_SMURF } from "../actions/actions"
 const initialState = { 
   smurfs: [],
   smurfCount: 1
@@ -14,7 +15,11 @@ const reducer = (state=initialState, action) => {
       };
     case ADD_SMURF:
       return {
-        ...state, smurfCount: state.smurfCount +1
+        ...state, smurfCount: state.smurfCount + 1
+      }
+    case REMOVE_SMURF:
+      return {
+        ...state, smurfCount: state.smurfCount + 1
       }
 
     default:

@@ -15,7 +15,7 @@ const App = props => {
     <div className="App">
       <SmurfForm />
       <button onClick={getSmurfs}>Update Smurfs</button>
-      {props.smurfs.map(smurf => <p key={smurf.name}>{smurf.name}</p>)}
+      {props.smurfs.map(smurf => <p key={smurf.name}>Name: {smurf.name} Age: {smurf.age} Height: {smurf.height} Id: {smurf.id}</p>)}
     </div>
   );
 }
